@@ -1,11 +1,31 @@
 {
-  "main": "node_modules/expo/AppEntry.js",
+  "main": "AppEntry.js",
   "scripts": {
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
     "eject": "expo eject"
   },
+
+  "jest": {
+    "preset": "react-native",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
+    "transform": {
+      "^.+\\.(js)$": "<rootDir>/node_modules/babel-jest",
+      "\\.(ts|tsx)$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
+    "testPathIgnorePatterns": [
+      "\\.snap$",
+      "<rootDir>/node_modules/"
+    ],
+    "cacheDirectory": ".jest/cache"
+  },
+
   "dependencies": {
     "expo": "^32.0.0",
     "expo-cli": "^2.14.0",
@@ -13,10 +33,24 @@
     "react-native": "https://github.com/expo/react-native/archive/sdk-32.0.0.tar.gz"
   },
   "devDependencies": {
+    "@types/jest": "^24.0.11",
     "@types/react": "^16.8.13",
     "@types/react-native": "^0.57.43",
+    "@types/react-test-renderer": "^16.8.1",
+    "@typescript-eslint/eslint-plugin": "^1.6.0",
+    "@typescript-eslint/parser": "^1.6.0",
     "babel-preset-expo": "^5.0.0",
+    "eslint": "^5.16.0",
+    "eslint-config-prettier": "^4.1.0",
+    "eslint-plugin-prettier": "^3.0.1",
+    "eslint-plugin-react": "^7.12.4",
+    "eslint-plugin-react-native": "^3.6.0",
+    "jest": "^24.7.1",
+    "prettier": "^1.17.0",
+    "react-addons-test-utils": "^15.6.2",
     "react-native-typescript-transformer": "^1.2.12",
+    "react-test-renderer": "^16.8.6",
+    "ts-jest": "^24.0.2",
     "typescript": "^3.4.3"
   },
   "private": true

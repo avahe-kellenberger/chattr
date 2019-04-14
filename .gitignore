@@ -4,3 +4,6 @@ dist/*
 example/dist/*
 .expo/**
 yarn-error*
+
+.history/**
+.jest/**
