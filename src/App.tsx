@@ -1,12 +1,13 @@
-import React from 'react';
-import { Text, View } from 'react-native';
+import { createStackNavigator, createAppContainer } from 'react-navigation';
+import ChatFeed from './ChatFeed/ChatFeed';
 
-export default class App extends React.Component {
-  public render() {
-    return (
-      <View>
-        <Text>Test!!!</Text>
-      </View>
-    );
-  }
-}
+const AppNavigator = createStackNavigator(
+  {
+    Home: ChatFeed,
+  },
+  {
+    initialRouteName: 'Home',
+  },
+);
+
+export default createAppContainer(AppNavigator);

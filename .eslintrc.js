@@ -22,6 +22,7 @@ module.exports =  {
     rules:  {
       '@typescript-eslint/explicit-function-return-type': 'off',
       '@typescript-eslint/no-unused-vars': "off",
+      '@typescript-eslint/no-explicit-any': "off",
       "react-native/no-unused-styles": 2,
       "react-native/split-platform-components": 2,
       "react-native/no-inline-styles": 2,
