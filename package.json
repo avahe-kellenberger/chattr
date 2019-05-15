@@ -8,11 +8,10 @@
     "eject": "expo eject"
   },
   "jest": {
-    "testEnvironment": "jsdom",
     "setupFiles": [
-      "<rootDir>/test/setup.ts"
+      "<rootDir>/test/tools/setup.ts"
     ],
-    "preset": "react-native",
+    "preset": "jest-expo",
     "moduleFileExtensions": [
       "ts",
       "tsx",
@@ -22,10 +21,9 @@
       "^.+\\.(js)$": "<rootDir>/node_modules/babel-jest",
       "\\.(ts|tsx)$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
     },
-    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
-    "testPathIgnorePatterns": [
-      "\\.snap$",
-      "<rootDir>/node_modules/"
+    "testMatch": [
+      "<rootDir>/test/**(?!tools\/)/*.ts?(x)",
+      "**/?(*.)+(spec|test).ts?(x)"
     ],
     "cacheDirectory": ".jest/cache"
   },
@@ -35,14 +33,14 @@
     "react": "16.5.0",
     "react-dom": "^16.8.6",
     "react-native": "https://github.com/expo/react-native/archive/sdk-32.0.0.tar.gz",
-    "react-native-git-upgrade": "^0.2.7",
-    "react-native-material-ui": "^1.30.1",
-    "react-native-vector-icons": "^6.4.2"
+    "react-native-paper": "^2.15.2",
+    "react-navigation": "^3.9.1"
   },
   "devDependencies": {
     "@types/enzyme": "^3.9.1",
     "@types/enzyme-adapter-react-16": "^1.0.5",
     "@types/jest": "^24.0.11",
+    "@types/jsdom": "^12.2.3",
     "@types/react": "^16.8.13",
     "@types/react-native": "^0.57.43",
     "@types/react-navigation": "^3.0.6",
@@ -58,12 +56,12 @@
     "eslint-plugin-react": "^7.12.4",
     "eslint-plugin-react-native": "^3.6.0",
     "jest": "^24.7.1",
-    "jsdom": "^15.0.0",
+    "jest-expo": "^32.0.0",
+    "jsdom": "^15.1.0",
     "jsdom-global": "^3.0.2",
     "prettier": "^1.17.0",
     "react-addons-test-utils": "^15.6.2",
     "react-native-typescript-transformer": "^1.2.12",
-    "react-navigation": "^3.9.1",
     "react-test-renderer": "^16.8.6",
     "ts-jest": "^24.0.2",
     "typescript": "^3.4.3"

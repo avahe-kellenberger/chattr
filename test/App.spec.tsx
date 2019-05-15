@@ -1,7 +1,7 @@
-import renderer, { ReactTestRenderer } from 'react-test-renderer';
+import { shallow } from 'enzyme';
 import React from 'react';
-import { mount } from 'enzyme';
-import * as Navigation from 'react-navigation';
+import { FAB } from 'react-native-paper';
+import renderer, { ReactTestRenderer } from 'react-test-renderer';
 import ChatFeed from '../src/ChatFeed/ChatFeed';
 
 test('Renders correctly with default', () => {
@@ -20,7 +20,8 @@ test('has a button that links to new chat', () => {
   let props: any;
   props = createTestProps({});
 
-  const app = mount(<ChatFeed navigation={...props} />);
+  const app = shallow(<ChatFeed {...props} />);
 
+  app.find(FAB).simulate('press');
   expect(props.navigation.navigate).toBeCalledWith('NewChat');
 });
