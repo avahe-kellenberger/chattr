@@ -1,20 +1,13 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Text, View } from 'react-native';
 import { Colors, FAB } from 'react-native-paper';
 import { NavigationContainerProps } from 'react-navigation';
+import { ChatFeedStyle } from './chatfeedstyles';
 
 interface Props extends NavigationContainerProps {
   theme?: any;
 }
 
-const styles = StyleSheet.create({
-  fab: {
-    position: 'absolute',
-    margin: 16,
-    right: 0,
-    bottom: 0,
-  },
-});
 export default class ChatFeed extends React.Component<Props> {
   public constructor(props: Props) {
     super(props);
@@ -29,10 +22,10 @@ export default class ChatFeed extends React.Component<Props> {
 
   public render() {
     return (
-      <View>
+      <View style={ChatFeedStyle.view}>
         <Text>Chat Feed</Text>
         <FAB
-          style={styles.fab}
+          style={ChatFeedStyle.fab}
           icon="add"
           theme={{ colors: { accent: Colors.red300 } }}
           onPress={this.navigate}
